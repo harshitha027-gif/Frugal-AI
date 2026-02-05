@@ -36,6 +36,20 @@
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
+
+    /* Custom Colors for Redesign */
+    --color-primary: #06f9bc;
+    --color-primary-dark: #04c293;
+    --color-accent-orange: #F97316;
+    --color-accent-orange-hover: #ea580c;
+    --color-background-dark: #0B0E14;
+    --color-surface-dark: #11141D;
+    --color-surface-border: #1F2937;
+    --color-text-main: #F3F4F6;
+    --color-text-muted: #9CA3AF;
+
+    --font-display: "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
 }
 
 /*

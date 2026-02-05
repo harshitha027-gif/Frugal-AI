@@ -98,6 +98,12 @@ export function Navbar() {
                         Tools
                     </Link>
                     <Link
+                        href="/leaderboard"
+                        className="text-sm font-medium text-neutral-300 hover:text-white transition-colors"
+                    >
+                        Leaderboard
+                    </Link>
+                    <Link
                         href="/submit"
                         className="text-sm font-medium text-neutral-300 hover:text-white transition-colors"
                     >
@@ -258,6 +264,13 @@ export function Navbar() {
                         onClick={() => setIsOpen(false)}
                     >
                         Tools
+                    </Link>
+                    <Link
+                        href="/leaderboard"
+                        className="text-base font-medium text-neutral-300 hover:text-white py-2"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Leaderboard
                     </Link>
                     <Link
                         href="/submit"
