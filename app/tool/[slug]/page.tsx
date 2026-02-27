@@ -35,9 +35,9 @@ export default async function ToolDetailPage(props: Props) {
     }
 
     return (
-        <div className="min-h-screen bg-[#0B0E14] text-white pt-24 pb-12">
+        <div className="min-h-screen bg-background text-foreground pt-24 pb-12">
             <ViewIncrementer toolId={finalTool.id} />
-            <Link href="/" className="container mx-auto px-6 max-w-7xl inline-flex items-center text-neutral-400 hover:text-white mb-4 transition-colors group">
+            <Link href="/" className="container mx-auto px-6 max-w-7xl inline-flex items-center text-muted-foreground hover:text-foreground mb-4 transition-colors group">
                 <ChevronLeft size={16} className="mr-1 group-hover:-translate-x-1 transition-transform" /> Back to Marketplace
             </Link>
 

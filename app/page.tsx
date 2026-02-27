@@ -22,7 +22,7 @@ export default async function Home() {
     console.log("Featured tools:", featuredTools)
 
     return (
-        <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-emerald-500/30">
+        <main className="min-h-screen bg-background text-foreground selection:bg-emerald-500/30">
             <Hero />
             <Features />
             <HowItWorks />

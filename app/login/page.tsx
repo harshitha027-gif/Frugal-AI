@@ -108,16 +108,16 @@ function AuthForm() {
     return (
         <div className="w-full max-w-md mx-auto relative z-10">
             {/* Glass Container */}
-            <div className="bg-[#111] border border-white/10 rounded-2xl p-8 shadow-2xl backdrop-blur-xl">
+            <div className="bg-card border border-border rounded-2xl p-8 shadow-2xl backdrop-blur-xl">
 
                 {/* Tab Switcher */}
-                <div className="flex p-1 bg-black/40 rounded-lg mb-8 border border-white/5">
+                <div className="flex p-1 bg-muted rounded-lg mb-8 border border-border">
                     <button
                         type="button"
                         onClick={() => toggleMode('login')}
                         className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${mode === 'login'
-                            ? 'bg-white/10 text-white shadow-sm'
-                            : 'text-neutral-400 hover:text-white'
+                            ? 'bg-background text-foreground shadow-sm'
+                            : 'text-muted-foreground hover:text-foreground'
                             }`}
                     >
                         Login
@@ -126,8 +126,8 @@ function AuthForm() {
                         type="button"
                         onClick={() => toggleMode('signup')}
                         className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${mode === 'signup'
-                            ? 'bg-white/10 text-white shadow-sm'
-                            : 'text-neutral-400 hover:text-white'
+                            ? 'bg-background text-foreground shadow-sm'
+                            : 'text-muted-foreground hover:text-foreground'
                             }`}
                     >
                         Sign Up
@@ -136,10 +136,10 @@ function AuthForm() {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <h1 className="text-2xl font-bold text-white mb-2">
+                    <h1 className="text-2xl font-bold text-foreground mb-2">
                         {mode === 'login' ? 'Welcome back' : 'Create an account'}
                     </h1>
-                    <p className="text-neutral-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                         {mode === 'login'
                             ? 'Enter your credentials to access your account'
                             : 'Join thousands of developers building efficient AI'
@@ -160,10 +160,10 @@ function AuthForm() {
                 {/* Divider */}
                 <div className="relative mb-6">
                     <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-white/10"></div>
+                        <div className="w-full border-t border-border"></div>
                     </div>
                     <div className="relative flex justify-center text-xs uppercase">
-                        <span className="bg-[#111] px-2 text-neutral-500">Or continue with</span>
+                        <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
                     </div>
                 </div>
 
@@ -173,16 +173,16 @@ function AuthForm() {
                     {/* Full Name (Signup only) */}
                     {mode === 'signup' && (
                         <div className="space-y-1">
-                            <label className="text-xs font-medium text-neutral-400 ml-1">Full Name</label>
+                            <label className="text-xs font-medium text-muted-foreground ml-1">Full Name</label>
                             <div className="relative">
-                                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                                 <input
                                     type="text"
                                     placeholder="John Doe"
                                     value={fullName}
                                     onChange={(e) => setFullName(e.target.value)}
                                     required
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
+                                    className="w-full bg-background border border-border rounded-lg py-2.5 pl-10 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
                                 />
                             </div>
                         </div>
@@ -190,16 +190,16 @@ function AuthForm() {
 
                     {/* Email */}
                     <div className="space-y-1">
-                        <label className="text-xs font-medium text-neutral-400 ml-1">Email Address</label>
+                        <label className="text-xs font-medium text-muted-foreground ml-1">Email Address</label>
                         <div className="relative">
-                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                             <input
                                 type="email"
                                 placeholder="you@example.com"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
-                                className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
+                                className="w-full bg-background border border-border rounded-lg py-2.5 pl-10 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
                             />
                         </div>
                     </div>
@@ -207,16 +207,16 @@ function AuthForm() {
                     {/* Password */}
                     {(mode === 'signup' || authMethod === 'password') && (
                         <div className="space-y-1">
-                            <label className="text-xs font-medium text-neutral-400 ml-1">Password</label>
+                            <label className="text-xs font-medium text-muted-foreground ml-1">Password</label>
                             <div className="relative">
-                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                                 <input
                                     type="password"
                                     placeholder="••••••••"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required={authMethod === 'password'}
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
+                                    className="w-full bg-background border border-border rounded-lg py-2.5 pl-10 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all text-sm"
                                 />
                             </div>
                         </div>
@@ -226,7 +226,7 @@ function AuthForm() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full flex items-center justify-center gap-2 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-lg transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+                        className="w-full flex items-center justify-center gap-2 py-2.5 bg-primary hover:bg-primary-dark text-primary-foreground font-semibold rounded-lg transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] disabled:opacity-50 disabled:cursor-not-allowed mt-2"
                     >
                         {loading && <Loader2 className="w-4 h-4 animate-spin" />}
                         {mode === 'signup' ? 'Create Account' : (authMethod === 'magic' ? 'Send Magic Link' : 'Sign In')}
@@ -265,11 +265,11 @@ function AuthForm() {
 
 export default function LoginPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] px-4 py-12 relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center bg-background px-4 py-12 relative overflow-hidden">
             {/* Background spotlight effect */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-[#0a0a0a] to-[#0a0a0a] z-0" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-muted via-background to-background z-0" />
 
-            <Suspense fallback={<div className="text-white">Loading...</div>}>
+            <Suspense fallback={<div className="text-foreground">Loading...</div>}>
                 <AuthForm />
             </Suspense>
         </div>

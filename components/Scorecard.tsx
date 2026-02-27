@@ -41,50 +41,50 @@ export function Scorecard({ tool }: ScorecardProps) {
     const hwPercentage = Math.round((tool.score_hardware || 0) / 20 * 100)
 
     return (
-        <div className="bg-[#1a1f2e] border border-white/5 rounded-xl p-5 w-full">
+        <div className="bg-card border border-border rounded-xl p-5 w-full">
             <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-white flex items-center gap-2">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
                     Frugal AI Index
                     <div className="group relative">
-                        <Info className="w-4 h-4 text-neutral-500 cursor-help" />
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-black border border-white/20 p-2 rounded text-xs text-neutral-300 hidden group-hover:block z-10 shadow-xl">
+                        <Info className="w-4 h-4 text-muted-foreground cursor-help" />
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-card border border-border p-2 rounded text-xs text-foreground hidden group-hover:block z-10 shadow-xl">
                             A composite score measuring efficiency, transparency, and maintenance.
                         </div>
                     </div>
                 </h3>
-                <span className="text-2xl font-bold text-[#00f0b5]">{tool.frugal_score_total || 0}/100</span>
+                <span className="text-2xl font-bold text-primary">{tool.frugal_score_total || 0}/100</span>
             </div>
 
             <div className="space-y-3">
                 {/* Efficiency */}
                 <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-neutral-400">
+                    <div className="flex justify-between text-xs text-muted-foreground">
                         <span>Resource Efficiency</span>
                         <span>{Math.round(((tool.score_footprint || 0) + (tool.score_energy || 0)) / 55 * 100)}%</span>
                     </div>
-                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-emerald-500 rounded-full" style={{ width: `${Math.round(((tool.score_footprint || 0) + (tool.score_energy || 0)) / 55 * 100)}%` }} />
+                    <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
+                        <div className="h-full bg-primary rounded-full" style={{ width: `${Math.round(((tool.score_footprint || 0) + (tool.score_energy || 0)) / 55 * 100)}%` }} />
                     </div>
                 </div>
 
                 {/* Transparency (TCO + Data) */}
                 <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-neutral-400">
+                    <div className="flex justify-between text-xs text-muted-foreground">
                         <span>Openness & TCO</span>
                         <span>{Math.round(((tool.score_tco || 0) + (tool.score_data || 0)) / 25 * 100)}%</span>
                     </div>
-                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-full bg-foreground/5 rounded-full overflow-hidden">
                         <div className="h-full bg-blue-500 rounded-full" style={{ width: `${Math.round(((tool.score_tco || 0) + (tool.score_data || 0)) / 25 * 100)}%` }} />
                     </div>
                 </div>
 
                 {/* Hardware Agnosticism */}
                 <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-neutral-400">
+                    <div className="flex justify-between text-xs text-muted-foreground">
                         <span>Hardware Agnosticism</span>
                         <span>{Math.round((tool.score_hardware || 0) / 20 * 100)}%</span>
                     </div>
-                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-full bg-foreground/5 rounded-full overflow-hidden">
                         <div className="h-full bg-orange-500 rounded-full" style={{ width: `${Math.round((tool.score_hardware || 0) / 20 * 100)}%` }} />
                     </div>
                 </div>

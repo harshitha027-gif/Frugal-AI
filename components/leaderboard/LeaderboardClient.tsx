@@ -64,16 +64,16 @@ export function LeaderboardClient({ allRankings }: LeaderboardClientProps) {
         <div className="flex-1 min-w-0">
             {/* Page Header */}
             <div className="mb-8">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-white">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-foreground">
                     Global Leaderboard
                 </h2>
-                <p className="text-[#9CA3AF] text-lg max-w-2xl">
+                <p className="text-muted-foreground text-lg max-w-2xl">
                     Tracking efficiency in the age of excess compute. Discover the most resource-efficient AI tools ranked by our proprietary Frugal Score™.
                 </p>
             </div>
 
             {/* Interactive Tabs */}
-            <div className="mb-8 border-b border-[#1E2532] overflow-x-auto no-scrollbar">
+            <div className="mb-8 border-b border-border overflow-x-auto no-scrollbar">
                 <div className="flex space-x-1 md:space-x-2 min-w-max">
                     {TABS.map((tab) => {
                         const Icon = tab.icon
@@ -86,12 +86,12 @@ export function LeaderboardClient({ allRankings }: LeaderboardClientProps) {
                                     relative pb-3 px-3 md:px-4 flex items-center gap-2 
                                     font-medium text-sm tracking-wide transition-all duration-200
                                     ${isActive
-                                        ? 'text-[#06f9bc]'
-                                        : 'text-[#9CA3AF] hover:text-white'
+                                        ? 'text-primary'
+                                        : 'text-muted-foreground hover:text-foreground'
                                     }
                                 `}
                             >
-                                <Icon className={`w-4 h-4 ${isActive ? 'text-[#06f9bc]' : ''}`} />
+                                <Icon className={`w-4 h-4 ${isActive ? 'text-primary' : ''}`} />
                                 <span className="hidden sm:inline">{tab.label}</span>
                                 <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
 
@@ -99,7 +99,7 @@ export function LeaderboardClient({ allRankings }: LeaderboardClientProps) {
                                 {isActive && (
                                     <motion.div
                                         layoutId="activeTab"
-                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#06f9bc] rounded-full"
+                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
                                         initial={false}
                                         transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                                     />
@@ -120,12 +120,12 @@ export function LeaderboardClient({ allRankings }: LeaderboardClientProps) {
                     transition={{ duration: 0.2 }}
                     className="mb-6 flex items-center gap-3"
                 >
-                    <div className="h-8 w-1 bg-[#06f9bc] rounded-full" />
+                    <div className="h-8 w-1 bg-primary rounded-full" />
                     <div>
-                        <span className="text-white font-semibold">{activeTabInfo?.label}</span>
-                        <span className="text-[#9CA3AF] ml-2">— {activeTabInfo?.description}</span>
+                        <span className="text-foreground font-semibold">{activeTabInfo?.label}</span>
+                        <span className="text-muted-foreground ml-2">— {activeTabInfo?.description}</span>
                     </div>
-                    <span className="ml-auto text-xs text-[#9CA3AF] bg-[#1E2532] px-2 py-1 rounded-full">
+                    <span className="ml-auto text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
                         {filteredRankings.length} tools
                     </span>
                 </motion.div>
@@ -136,7 +136,7 @@ export function LeaderboardClient({ allRankings }: LeaderboardClientProps) {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-[#151A23] border border-[#1E2532] rounded-xl p-12 text-center"
+                    className="bg-card border border-border rounded-xl p-12 text-center"
                 >
                     <div className="size-16 mx-auto mb-4 rounded-full bg-[#1E2532] flex items-center justify-center">
                         {activeTabInfo && <activeTabInfo.icon className="w-8 h-8 text-[#9CA3AF]" />}

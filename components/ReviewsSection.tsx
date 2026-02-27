@@ -98,12 +98,12 @@ export function ReviewsSection({ toolId }: { toolId: string }) {
     if (loading) return <div className="py-8 text-center text-neutral-500">Loading reviews...</div>
 
     return (
-        <div className="mt-16 border-t border-white/5 pt-12">
-            <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <div className="mt-16 border-t border-border pt-12">
+            <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
                 User Reviews
-                <span className="text-lg font-normal text-neutral-400 bg-white/5 px-3 py-1 rounded-full flex items-center gap-1">
+                <span className="text-lg font-normal text-muted-foreground bg-foreground/5 px-3 py-1 rounded-full flex items-center gap-1">
                     <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    {averageRating} <span className="text-neutral-600">({reviews.length})</span>
+                    {averageRating} <span className="text-muted-foreground/60">({reviews.length})</span>
                 </span>
             </h2>
 
@@ -114,10 +114,10 @@ export function ReviewsSection({ toolId }: { toolId: string }) {
                         <div className="text-neutral-500 italic">No reviews yet. Be the first to share your thoughts!</div>
                     ) : (
                         reviews.map((review) => (
-                            <div key={review.id} className="bg-[#111] p-6 rounded-2xl border border-white/5">
+                            <div key={review.id} className="bg-card p-6 rounded-2xl border border-border">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-neutral-800 overflow-hidden flex items-center justify-center border border-white/10">
+                                        <div className="w-10 h-10 rounded-full bg-muted overflow-hidden flex items-center justify-center border border-border">
                                             {review.profiles?.avatar_url ? (
                                                 <img src={review.profiles.avatar_url} alt={review.profiles.full_name} className="w-full h-full object-cover" />
                                             ) : (
@@ -125,8 +125,8 @@ export function ReviewsSection({ toolId }: { toolId: string }) {
                                             )}
                                         </div>
                                         <div>
-                                            <div className="text-white font-medium">{review.profiles?.full_name || 'Anonymous'}</div>
-                                            <div className="text-xs text-neutral-500">{new Date(review.created_at).toLocaleDateString()}</div>
+                                            <div className="text-foreground font-medium">{review.profiles?.full_name || 'Anonymous'}</div>
+                                            <div className="text-xs text-muted-foreground">{new Date(review.created_at).toLocaleDateString()}</div>
                                         </div>
                                     </div>
                                     <div className="flex text-yellow-400">
@@ -135,20 +135,20 @@ export function ReviewsSection({ toolId }: { toolId: string }) {
                                         ))}
                                     </div>
                                 </div>
-                                <p className="text-neutral-300 text-sm leading-relaxed">{review.comment}</p>
+                                <p className="text-muted-foreground text-sm leading-relaxed">{review.comment}</p>
                             </div>
                         ))
                     )}
                 </div>
 
                 {/* Write Review Form */}
-                <div className="bg-[#111] p-8 rounded-3xl border border-white/10 h-fit sticky top-32">
-                    <h3 className="text-xl font-bold text-white mb-6">Drop a Review</h3>
+                <div className="bg-card p-8 rounded-3xl border border-border h-fit sticky top-32">
+                    <h3 className="text-xl font-bold text-foreground mb-6">Drop a Review</h3>
 
                     {user ? (
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label className="block text-sm font-medium text-neutral-400 mb-2">Rating</label>
+                                <label className="block text-sm font-medium text-muted-foreground mb-2">Rating</label>
                                 <div className="flex gap-2">
                                     {[1, 2, 3, 4, 5].map((star) => (
                                         <button
@@ -164,21 +164,21 @@ export function ReviewsSection({ toolId }: { toolId: string }) {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-neutral-400 mb-2">Your Experience</label>
+                                <label className="block text-sm font-medium text-muted-foreground mb-2">Your Experience</label>
                                 <textarea
                                     value={comment}
                                     onChange={(e) => setComment(e.target.value)}
                                     placeholder="How was the performance? Is it truly frugal?"
                                     rows={4}
                                     required
-                                    className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 transition-all resize-none"
+                                    className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-emerald-500/50 transition-all resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={submitting}
-                                className="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                                className="w-full py-3 bg-foreground text-background font-bold rounded-xl hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                             >
                                 {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                                 Submit Review

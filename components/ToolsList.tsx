@@ -80,7 +80,7 @@ export function ToolsList({ initialTools, categories }: Props) {
     return (
         <div className="space-y-12">
             {/* Controls */}
-            <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-[#111] p-6 rounded-2xl border border-white/5 shadow-2xl">
+            <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-card p-6 rounded-2xl border border-border shadow-2xl">
 
                 {/* Search */}
                 <div className="relative w-full md:w-96">
@@ -90,7 +90,7 @@ export function ToolsList({ initialTools, categories }: Props) {
                         placeholder="Search for frugal tools..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all"
+                        className="w-full bg-background border border-border rounded-xl pl-12 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all"
                     />
                 </div>
 
@@ -125,7 +125,7 @@ export function ToolsList({ initialTools, categories }: Props) {
                     onClick={() => setSelectedCategory('all')}
                     className={`px-6 py-2.5 rounded-full border text-sm font-medium transition-all ${selectedCategory === 'all'
                         ? 'bg-emerald-500 text-black border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                        : 'bg-white/5 text-neutral-400 border-white/5 hover:bg-white/10 hover:text-white'
+                        : 'bg-foreground/5 text-muted-foreground border-border hover:bg-foreground/10 hover:text-foreground'
                         }`}
                 >
                     All Tools
@@ -136,7 +136,7 @@ export function ToolsList({ initialTools, categories }: Props) {
                         onClick={() => setSelectedCategory(cat.id)}
                         className={`px-6 py-2.5 rounded-full border text-sm font-medium transition-all ${selectedCategory === cat.id
                             ? 'bg-emerald-500 text-black border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                            : 'bg-white/5 text-neutral-400 border-white/5 hover:bg-white/10 hover:text-white'
+                            : 'bg-foreground/5 text-muted-foreground border-border hover:bg-foreground/10 hover:text-foreground'
                             }`}
                     >
                         {cat.name}
@@ -148,7 +148,7 @@ export function ToolsList({ initialTools, categories }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {filteredTools.map(tool => (
                     <Link href={`/tool/${tool.slug}`} key={tool.id} className="group">
-                        <div className="h-full bg-[#111] border border-white/10 rounded-3xl p-6 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                        <div className="h-full bg-card border border-border rounded-3xl p-6 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
                             {/* Hover Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -165,10 +165,10 @@ export function ToolsList({ initialTools, categories }: Props) {
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-emerald-400 transition-colors">
                                     {tool.name}
                                 </h3>
-                                <p className="text-neutral-400 text-sm mb-6 line-clamp-2 flex-grow">
+                                <p className="text-muted-foreground text-sm mb-6 line-clamp-2 flex-grow">
                                     {tool.tagline}
                                 </p>
 

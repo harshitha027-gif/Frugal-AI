@@ -42,9 +42,9 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                             <span className="text-primary text-[48px] font-bold">{tool.name.charAt(0)}</span>
                         </div>
                         <div className="flex flex-col justify-center gap-1">
-                            <h1 className="text-3xl font-bold text-white tracking-tight">{tool.name}</h1>
-                            <div className="flex items-center gap-2 text-text-muted text-sm font-medium">
-                                <span>Sold by: <span className="text-white">{tool.profiles?.full_name || 'Anonymous'}</span></span>
+                            <h1 className="text-3xl font-bold text-foreground tracking-tight">{tool.name}</h1>
+                            <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                                <span>Sold by: <span className="text-foreground">{tool.profiles?.full_name || 'Anonymous'}</span></span>
                                 {isVerified && (
                                     <span className="flex items-center text-primary" title="Verified Publisher">
                                         <CheckCircle className="w-4 h-4 fill-current" />
@@ -52,11 +52,11 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                                 )}
                             </div>
                             <div className="flex gap-2 mt-2">
-                                <span className="inline-flex items-center rounded-md bg-[#1F2937] px-2 py-1 text-xs font-medium text-text-muted ring-1 ring-inset ring-gray-500/10">
+                                <span className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium text-muted-foreground ring-1 ring-inset ring-gray-500/10">
                                     {tool.categories?.name || 'Uncategorized'}
                                 </span>
                                 {tool.pricing_model && (
-                                    <span className="inline-flex items-center rounded-md bg-[#1F2937] px-2 py-1 text-xs font-medium text-text-muted ring-1 ring-inset ring-gray-500/10">
+                                    <span className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium text-muted-foreground ring-1 ring-inset ring-gray-500/10">
                                         {tool.pricing_model}
                                     </span>
                                 )}
@@ -102,7 +102,7 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2 transition-colors ${isActive
                                     ? 'border-primary text-primary'
-                                    : 'border-transparent text-text-muted hover:text-white hover:border-gray-300'
+                                    : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
                                     }`}
                             >
                                 <Icon className="w-5 h-5" />
@@ -123,9 +123,9 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                         <>
                             {/* Tool Summary */}
                             <section>
-                                <h3 className="text-xl font-bold text-white mb-3">Tool Summary</h3>
-                                <div className="bg-surface-dark border border-surface-border rounded-xl p-6">
-                                    <p className="text-text-muted leading-relaxed text-base">
+                                <h3 className="text-xl font-bold text-foreground mb-3">Tool Summary</h3>
+                                <div className="bg-card border border-border rounded-xl p-6">
+                                    <p className="text-muted-foreground leading-relaxed text-base">
                                         {tool.tagline}
                                     </p>
                                     <div className="mt-4 flex gap-2 flex-wrap">
@@ -139,17 +139,17 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                             {/* Frugal Scorecard */}
                             <section>
                                 <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-xl font-bold text-white">Frugal Scorecard</h3>
-                                    <span className="text-xs text-text-muted">Verified: {new Date(tool.updated_at || tool.created_at).toLocaleDateString()}</span>
+                                    <h3 className="text-xl font-bold text-foreground">Frugal Scorecard</h3>
+                                    <span className="text-xs text-muted-foreground">Verified: {new Date(tool.updated_at || tool.created_at).toLocaleDateString()}</span>
                                 </div>
-                                <div className="bg-surface-dark border border-surface-border rounded-xl p-8 relative overflow-hidden">
+                                <div className="bg-card border border-border rounded-xl p-8 relative overflow-hidden">
                                     <div className="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                                     <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
                                         {/* Gauge (CSS Implementation) */}
                                         <div className="flex flex-col items-center justify-center relative shrink-0">
                                             <div className="relative w-40 h-40">
                                                 <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                                                    <circle cx="50" cy="50" fill="none" r="45" stroke="#1F2937" strokeWidth="8"></circle>
+                                                    <circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" strokeWidth="8" className="text-muted/20"></circle>
                                                     <circle
                                                         cx="50" cy="50" fill="none" r="45" stroke="#06f9bc"
                                                         strokeDasharray="283"
@@ -158,8 +158,8 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                                                     ></circle>
                                                 </svg>
                                                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                                    <span className="text-4xl font-bold text-white tracking-tighter">{score}</span>
-                                                    <span className="text-xs font-medium text-text-muted uppercase tracking-wide">/ 100</span>
+                                                    <span className="text-4xl font-bold text-foreground tracking-tighter">{score}</span>
+                                                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">/ 100</span>
                                                 </div>
                                             </div>
                                             <span className="mt-3 text-sm font-semibold text-primary">
@@ -170,23 +170,23 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                                         {/* Highlights Grid */}
                                         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                                             <div className="flex gap-3">
-                                                <div className="mt-1 bg-[#10231e] p-2 rounded-lg h-min border border-[#1e3a34]">
+                                                <div className="mt-1 bg-primary/10 p-2 rounded-lg h-min border border-primary/20">
                                                     <Bolt className="text-primary w-5 h-5" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-white font-semibold text-sm">Resource Optimized</p>
-                                                    <p className="text-text-muted text-xs mt-1">
+                                                    <p className="text-foreground font-semibold text-sm">Resource Optimized</p>
+                                                    <p className="text-muted-foreground text-xs mt-1">
                                                         {tool.min_ram ? `Min RAM: ${tool.min_ram}` : 'Low memory footprint expected.'}
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className="flex gap-3">
-                                                <div className="mt-1 bg-[#10231e] p-2 rounded-lg h-min border border-[#1e3a34]">
+                                                <div className="mt-1 bg-primary/10 p-2 rounded-lg h-min border border-primary/20">
                                                     <CloudOff className="text-primary w-5 h-5" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-white font-semibold text-sm">Offline Capability</p>
-                                                    <p className="text-text-muted text-xs mt-1">
+                                                    <p className="text-foreground font-semibold text-sm">Offline Capability</p>
+                                                    <p className="text-muted-foreground text-xs mt-1">
                                                         {tool.is_offline_capable ? 'Runs fully offline.' : 'Requires internet connection.'}
                                                     </p>
                                                 </div>
@@ -196,12 +196,12 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                                     </div>
 
                                     {/* Why Frugal */}
-                                    <div className="mt-8 pt-6 border-t border-surface-border">
-                                        <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                    <div className="mt-8 pt-6 border-t border-border">
+                                        <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                                             <Info className="text-primary w-4 h-4" />
                                             Why it's Frugal?
                                         </h4>
-                                        <p className="text-sm text-text-muted">
+                                        <p className="text-sm text-muted-foreground">
                                             {tool.efficiency_justification || "No specific justification provided, but passed automated checks."}
                                         </p>
                                     </div>
@@ -213,33 +213,33 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                     {/* SPECS TAB */}
                     {activeTab === 'specs' && (
                         <section>
-                            <h3 className="text-xl font-bold text-white mb-3">Hardware & Environment</h3>
-                            <div className="bg-surface-dark border border-surface-border rounded-xl p-6 space-y-6">
+                            <h3 className="text-xl font-bold text-foreground mb-3">Hardware & Environment</h3>
+                            <div className="bg-card border border-border rounded-xl p-6 space-y-6">
                                 <div>
-                                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Requirements</h4>
+                                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">Requirements</h4>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div className="flex justify-between p-3 bg-[#1F2937]/50 rounded border border-white/5">
-                                            <span className="text-text-muted">Minimum RAM</span>
-                                            <span className="text-white">{tool.min_ram || 'N/A'}</span>
+                                        <div className="flex justify-between p-3 bg-muted/50 rounded border border-border">
+                                            <span className="text-muted-foreground">Minimum RAM</span>
+                                            <span className="text-foreground">{tool.min_ram || 'N/A'}</span>
                                         </div>
-                                        <div className="flex justify-between p-3 bg-[#1F2937]/50 rounded border border-white/5">
-                                            <span className="text-text-muted">Storage Footprint</span>
-                                            <span className="text-white">{tool.storage_footprint || 'N/A'}</span>
+                                        <div className="flex justify-between p-3 bg-muted/50 rounded border border-border">
+                                            <span className="text-muted-foreground">Storage Footprint</span>
+                                            <span className="text-foreground">{tool.storage_footprint || 'N/A'}</span>
                                         </div>
-                                        <div className="flex justify-between p-3 bg-[#1F2937]/50 rounded border border-white/5">
-                                            <span className="text-text-muted">GPU VRAM</span>
-                                            <span className="text-white">{tool.gpu_vram || 'N/A'}</span>
+                                        <div className="flex justify-between p-3 bg-muted/50 rounded border border-border">
+                                            <span className="text-muted-foreground">GPU VRAM</span>
+                                            <span className="text-foreground">{tool.gpu_vram || 'N/A'}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Context</h4>
+                                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">Context</h4>
                                     <div className="flex flex-wrap gap-2">
                                         {tool.deployment_context?.map((ctx: string) => (
                                             <span key={ctx} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm">
                                                 {ctx}
                                             </span>
-                                        )) || <span className="text-text-muted text-sm">No context specified</span>}
+                                        )) || <span className="text-muted-foreground text-sm">No context specified</span>}
                                     </div>
                                 </div>
                             </div>
@@ -249,29 +249,29 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                     {/* PRICING TAB */}
                     {activeTab === 'pricing' && (
                         <section>
-                            <h3 className="text-xl font-bold text-white mb-3">Pricing & Legal</h3>
-                            <div className="bg-surface-dark border border-surface-border rounded-xl p-6">
+                            <h3 className="text-xl font-bold text-foreground mb-3">Pricing & Legal</h3>
+                            <div className="bg-card border border-border rounded-xl p-6">
                                 <div className="space-y-4">
-                                    <div className="flex items-center justify-between border-b border-surface-border pb-4">
+                                    <div className="flex items-center justify-between border-b border-border pb-4">
                                         <div>
-                                            <h4 className="text-white font-bold">Pricing Model</h4>
-                                            <p className="text-sm text-text-muted">How this tool is monetized</p>
+                                            <h4 className="text-foreground font-bold">Pricing Model</h4>
+                                            <p className="text-sm text-muted-foreground">How this tool is monetized</p>
                                         </div>
-                                        <span className="px-4 py-2 bg-white/5 rounded-lg text-white font-mono">
+                                        <span className="px-4 py-2 bg-foreground/5 rounded-lg text-foreground font-mono">
                                             {tool.pricing_model || 'Unknown'}
                                         </span>
                                     </div>
                                     <div className="flex items-center justify-between pt-2">
                                         <div>
-                                            <h4 className="text-white font-bold">License</h4>
-                                            <p className="text-sm text-text-muted">Usage rights and restrictions</p>
+                                            <h4 className="text-foreground font-bold">License</h4>
+                                            <p className="text-sm text-muted-foreground">Usage rights and restrictions</p>
                                         </div>
                                         {tool.license_url ? (
                                             <a href={tool.license_url} target="_blank" className="text-primary hover:underline flex items-center gap-1">
                                                 View License <ExternalLink className="w-3 h-3" />
                                             </a>
                                         ) : (
-                                            <span className="text-text-muted">Not specified</span>
+                                            <span className="text-muted-foreground">Not specified</span>
                                         )}
                                     </div>
                                 </div>
@@ -282,9 +282,9 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                     {/* USAGE TAB */}
                     {activeTab === 'usage' && (
                         <section>
-                            <h3 className="text-xl font-bold text-white mb-3">Usage & Documentation</h3>
-                            <div className="bg-surface-dark border border-surface-border rounded-xl p-6">
-                                <article className="prose prose-invert max-w-none text-neutral-300">
+                            <h3 className="text-xl font-bold text-foreground mb-3">Usage & Documentation</h3>
+                            <div className="bg-card border border-border rounded-xl p-6">
+                                <article className="prose dark:prose-invert max-w-none text-muted-foreground">
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                                         {tool.description || "No documentation provided."}
                                     </ReactMarkdown>
@@ -302,24 +302,24 @@ export function ToolDetailView({ tool }: ToolDetailViewProps) {
                 {/* Right Column: Metadata & Quick Stats */}
                 <div className="space-y-6">
                     {/* Deployment Info Box */}
-                    <div className="bg-surface-dark border border-surface-border rounded-xl p-5">
-                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-surface-border pb-2">Deployment</h4>
+                    <div className="bg-card border border-border rounded-xl p-5">
+                        <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4 border-b border-border pb-2">Deployment</h4>
                         <ul className="space-y-4">
                             <li className="flex justify-between items-center text-sm">
-                                <span className="text-text-muted">Environment</span>
-                                <span className="text-white font-medium truncate max-w-[150px] text-right">
+                                <span className="text-muted-foreground">Environment</span>
+                                <span className="text-foreground font-medium truncate max-w-[150px] text-right">
                                     {tool.deployment_context?.[0] || 'Flexible'}
                                 </span>
                             </li>
                             <li className="flex justify-between items-center text-sm">
-                                <span className="text-text-muted">Offline?</span>
-                                <span className={tool.is_offline_capable ? "text-primary font-bold" : "text-white font-medium"}>
+                                <span className="text-muted-foreground">Offline?</span>
+                                <span className={tool.is_offline_capable ? "text-primary font-bold" : "text-foreground font-medium"}>
                                     {tool.is_offline_capable ? 'Yes' : 'No'}
                                 </span>
                             </li>
                             <li className="flex justify-between items-center text-sm">
-                                <span className="text-text-muted">Created</span>
-                                <span className="text-white font-medium">{new Date(tool.created_at).toLocaleDateString()}</span>
+                                <span className="text-muted-foreground">Created</span>
+                                <span className="text-foreground font-medium">{new Date(tool.created_at).toLocaleDateString()}</span>
                             </li>
                         </ul>
                     </div>

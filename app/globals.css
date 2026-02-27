@@ -37,16 +37,15 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
-    /* Custom Colors for Redesign */
-    --color-primary: #06f9bc;
-    --color-primary-dark: #04c293;
-    --color-accent-orange: #F97316;
-    --color-accent-orange-hover: #ea580c;
-    --color-background-dark: #0B0E14;
-    --color-surface-dark: #11141D;
-    --color-surface-border: #1F2937;
-    --color-text-main: #F3F4F6;
-    --color-text-muted: #9CA3AF;
+    /* Custom Colors for Redesign Mapping */
+    --color-primary: hsl(var(--primary-brand));
+    --color-primary-dark: hsl(var(--primary-brand-dark));
+    --color-accent-orange: hsl(var(--accent-orange));
+    --color-accent-orange-hover: hsl(var(--accent-orange-hover));
+    --color-surface-dark: hsl(var(--surface-dark));
+    --color-surface-border: hsl(var(--surface-border));
+    --color-text-main: hsl(var(--text-main));
+    --color-text-muted: hsl(var(--text-muted));
 
     --font-display: "Inter", sans-serif;
     --font-body: "Inter", sans-serif;
@@ -89,6 +88,16 @@
         --input: 240 5.9% 90%;
         --ring: 240 10% 3.9%;
         --radius: 0.5rem;
+
+        /* Custom Colors for Redesign */
+        --primary-brand: 165 95% 50%;
+        --primary-brand-dark: 165 95% 39%;
+        --accent-orange: 24 95% 53%;
+        --accent-orange-hover: 24 95% 48%;
+        --surface-dark: 0 0% 98%;
+        --surface-border: 240 5.9% 90%;
+        --text-main: 240 10% 3.9%;
+        --text-muted: 240 3.8% 46.1%;
     }
 
     .dark {
@@ -111,6 +120,16 @@
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
         --ring: 240 4.9% 83.9%;
+
+        /* Custom Colors for Redesign */
+        --primary-brand: 165 95% 50%;
+        --primary-brand-dark: 165 95% 39%;
+        --accent-orange: 24 95% 53%;
+        --accent-orange-hover: 24 95% 48%;
+        --surface-dark: 231 15% 12%;
+        --surface-border: 222 15% 20%;
+        --text-main: 210 20% 96%;
+        --text-muted: 215 15% 65%;
     }
 }
 

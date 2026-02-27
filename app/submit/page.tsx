@@ -105,14 +105,14 @@ export default function SubmitToolPage() {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-                <Loader2 className="w-8 h-8 animate-spin text-emerald-500" />
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
             </div>
         )
     }
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-white pt-36 pb-20">
+        <div className="min-h-screen bg-background text-foreground pt-36 pb-20">
             <div className="container mx-auto px-6 max-w-7xl">
 
                 {step === 'import' ? (
@@ -122,7 +122,7 @@ export default function SubmitToolPage() {
                         {/* Left Column - Info (Sticky) */}
                         <div className="lg:sticky lg:top-32 space-y-12">
                             <div>
-                                <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-sm font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
                                     <Sparkles className="w-4 h-4" />
                                     <span>Contribute to the Community</span>
                                 </div>
@@ -134,43 +134,43 @@ export default function SubmitToolPage() {
                                     </span>
                                 </h1>
 
-                                <p className="text-lg text-neutral-400 leading-relaxed max-w-lg">
+                                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                                     Join our growing ecosystem of efficient AI solutions. Share your tool with thousands of developers and researchers optimize for performance and sustainability.
                                 </p>
                             </div>
 
                             <div className="space-y-8">
                                 <div className="flex gap-5 items-start">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#111] border border-white/5 flex items-center justify-center shadow-lg group">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-card border border-border flex items-center justify-center shadow-lg group">
                                         <Users className="w-6 h-6 text-emerald-500 group-hover:scale-110 transition-transform" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-white mb-2">Reach Thousands</h3>
-                                        <p className="text-neutral-400 leading-relaxed text-sm">
+                                        <h3 className="text-lg font-semibold text-foreground mb-2">Reach Thousands</h3>
+                                        <p className="text-muted-foreground leading-relaxed text-sm">
                                             Get your tool in front of developers actively searching for efficient AI solutions.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="flex gap-5 items-start">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#111] border border-white/5 flex items-center justify-center shadow-lg group">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-card border border-border flex items-center justify-center shadow-lg group">
                                         <CheckCircle className="w-6 h-6 text-emerald-500 group-hover:scale-110 transition-transform" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-white mb-2">Community Verified</h3>
-                                        <p className="text-neutral-400 leading-relaxed text-sm">
+                                        <h3 className="text-lg font-semibold text-foreground mb-2">Community Verified</h3>
+                                        <p className="text-muted-foreground leading-relaxed text-sm">
                                             Our team reviews each submission to ensure quality and relevance for the frugal AI ecosystem.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="flex gap-5 items-start">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#111] border border-white/5 flex items-center justify-center shadow-lg group">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-card border border-border flex items-center justify-center shadow-lg group">
                                         <Clock className="w-6 h-6 text-emerald-500 group-hover:scale-110 transition-transform" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-white mb-2">Quick Review</h3>
-                                        <p className="text-neutral-400 leading-relaxed text-sm">
+                                        <h3 className="text-lg font-semibold text-foreground mb-2">Quick Review</h3>
+                                        <p className="text-muted-foreground leading-relaxed text-sm">
                                             Most submissions are reviewed within 24-48 hours. You'll be notified via email.
                                         </p>
                                     </div>
@@ -179,21 +179,21 @@ export default function SubmitToolPage() {
                         </div>
 
                         {/* Right Column - Import Form */}
-                        <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                        <div className="bg-card border border-border rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
                             {/* Gradient Background Effect */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2" />
 
                             <div className="space-y-8">
                                 <div className="text-center space-y-2 mb-8">
-                                    <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/10">
+                                    <div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center mx-auto mb-4 border border-border">
                                         <Sparkles className="w-8 h-8 text-emerald-400" />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-white">Let's start with your tool</h2>
-                                    <p className="text-neutral-400">Import details automatically to save time.</p>
+                                    <h2 className="text-2xl font-bold text-foreground">Let's start with your tool</h2>
+                                    <p className="text-muted-foreground">Import details automatically to save time.</p>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <label className="block text-sm font-medium text-neutral-300">
+                                    <label className="block text-sm font-medium text-muted-foreground">
                                         Repository URL or ID
                                     </label>
                                     <div>
@@ -202,7 +202,7 @@ export default function SubmitToolPage() {
                                             placeholder="e.g. TheBloke/Mistral-7B-v0.1 or https://github.com/..."
                                             value={importRepo}
                                             onChange={(e) => setImportRepo(e.target.value)}
-                                            className="relative w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-neutral-600 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-all font-mono text-sm"
+                                            className="relative w-full bg-background border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-all font-mono text-sm"
                                         />
                                     </div>
                                     <p className="text-xs text-neutral-500 px-1">
@@ -220,7 +220,7 @@ export default function SubmitToolPage() {
                                 <button
                                     onClick={handleImport}
                                     disabled={importing || !importRepo}
-                                    className="w-full py-4 text-base font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-black shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+                                    className="w-full py-4 text-base font-bold rounded-xl bg-primary text-primary-foreground shadow-lg shadow-emerald-500/20 hover:bg-primary-dark hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
                                 >
                                     {importing ? (
                                         <>
@@ -237,16 +237,16 @@ export default function SubmitToolPage() {
 
                                 <div className="relative py-4">
                                     <div className="absolute inset-0 flex items-center">
-                                        <div className="w-full border-t border-white/10"></div>
+                                        <div className="w-full border-t border-border"></div>
                                     </div>
                                     <div className="relative flex justify-center text-sm">
-                                        <span className="px-4 bg-[#111] text-neutral-500">or</span>
+                                        <span className="px-4 bg-card text-muted-foreground">or</span>
                                     </div>
                                 </div>
 
                                 <button
                                     onClick={() => setStep('form')}
-                                    className="w-full py-3 text-sm font-medium text-neutral-400 hover:text-white transition-colors hover:bg-white/5 rounded-xl border border-transparent hover:border-white/5"
+                                    className="w-full py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted rounded-xl border border-transparent hover:border-border"
                                 >
                                     Skip and fill details manually
                                 </button>
@@ -258,12 +258,12 @@ export default function SubmitToolPage() {
                     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700">
                         <div className="mb-8 flex items-center justify-between">
                             <div>
-                                <h1 className="text-3xl font-bold mb-2">Review & Complete Submission</h1>
-                                <p className="text-neutral-400">Please verify the auto-filled details and add missing evidence.</p>
+                                <h1 className="text-3xl font-bold mb-2 text-foreground">Review & Complete Submission</h1>
+                                <p className="text-muted-foreground">Please verify the auto-filled details and add missing evidence.</p>
                             </div>
                             <button
                                 onClick={() => setStep('import')}
-                                className="px-4 py-2 text-sm text-neutral-400 hover:text-white transition-colors border border-white/10 rounded-lg hover:bg-white/5"
+                                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors border border-border rounded-lg hover:bg-muted"
                             >
                                 ← Back to Import
                             </button>

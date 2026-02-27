@@ -67,14 +67,14 @@ export default function ProfilePage() {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-                <Loader2 className="w-8 h-8 animate-spin text-emerald-500" />
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
             </div>
         )
     }
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-white pt-32 pb-20">
+        <div className="min-h-screen bg-background text-foreground pt-32 pb-20">
             <div className="container mx-auto px-6 max-w-7xl">
 
                 {/* Profile Header */}
@@ -90,8 +90,8 @@ export default function ProfilePage() {
                     </div>
 
                     <div className="flex-1 text-center md:text-left">
-                        <h1 className="text-3xl font-bold text-white mb-2">{profile?.full_name || 'Anonymous Creator'}</h1>
-                        <p className="text-neutral-400 mb-4">{user.email}</p>
+                        <h1 className="text-3xl font-bold text-foreground mb-2">{profile?.full_name || 'Anonymous Creator'}</h1>
+                        <p className="text-muted-foreground mb-4">{user.email}</p>
 
                         {profile?.website && (
                             <a href={profile.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors text-sm mb-6">
@@ -103,14 +103,14 @@ export default function ProfilePage() {
                         <div className="flex flex-wrap justify-center md:justify-start gap-4">
                             <Link
                                 href="/settings"
-                                className="px-5 py-2 text-sm font-medium border border-white/10 rounded-full hover:bg-white/5 transition-colors flex items-center gap-2"
+                                className="px-5 py-2 text-sm font-medium border border-border rounded-full hover:bg-muted transition-colors flex items-center gap-2"
                             >
                                 <Settings className="w-4 h-4" />
                                 Edit Profile
                             </Link>
                             <Link
                                 href="/submit"
-                                className="px-5 py-2 text-sm font-medium bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors flex items-center gap-2 font-bold shadow-lg shadow-emerald-500/20"
+                                className="px-5 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-primary-dark transition-colors flex items-center gap-2 font-bold shadow-lg shadow-primary/20"
                             >
                                 <Plus className="w-4 h-4" />
                                 Submit New Tool
@@ -118,48 +118,48 @@ export default function ProfilePage() {
                         </div>
                     </div>
 
-                    <div className="bg-[#111] border border-white/5 rounded-2xl p-6 min-w-[200px] text-center">
-                        <p className="text-sm text-neutral-500 mb-1">Total Views</p>
-                        <p className="text-3xl font-bold text-white">
+                    <div className="bg-card border border-border rounded-2xl p-6 min-w-[200px] text-center">
+                        <p className="text-sm text-muted-foreground mb-1">Total Views</p>
+                        <p className="text-3xl font-bold text-foreground">
                             {tools.reduce((acc, curr) => acc + (curr.views || 0), 0).toLocaleString()}
                         </p>
                     </div>
                 </div>
 
                 {/* Tools Grid */}
-                <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                    Your Tools <span className="text-sm font-normal text-neutral-500 bg-white/5 px-3 py-1 rounded-full">{tools.length}</span>
+                <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-foreground">
+                    Your Tools <span className="text-sm font-normal text-muted-foreground bg-muted px-3 py-1 rounded-full">{tools.length}</span>
                 </h2>
 
                 {tools.length === 0 ? (
-                    <div className="text-center py-20 bg-[#111] border border-white/5 rounded-3xl border-dashed">
-                        <p className="text-neutral-400 mb-6">You haven't submitted any tools yet.</p>
-                        <Link href="/submit" className="px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-neutral-200 transition-colors">
+                    <div className="text-center py-20 bg-card border border-border rounded-3xl border-dashed">
+                        <p className="text-muted-foreground mb-6">You haven't submitted any tools yet.</p>
+                        <Link href="/submit" className="px-6 py-3 bg-foreground text-background font-bold rounded-full hover:bg-muted transition-colors">
                             Submit your first tool
                         </Link>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {tools.map(tool => (
-                            <div key={tool.id} className="bg-[#111] border border-white/10 rounded-3xl p-6 relative group hover:border-emerald-500/20 transition-all">
+                            <div key={tool.id} className="bg-card border border-border rounded-3xl p-6 relative group hover:border-primary/20 transition-all">
                                 <div className="flex justify-between items-start mb-4">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-neutral-300">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border text-xs font-medium text-muted-foreground">
                                         {tool.categories?.name}
                                     </div>
                                     <div className={`px-2.5 py-1 rounded-full border text-xs font-bold ${tool.status === 'APPROVED' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
-                                            'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
+                                        'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
                                         }`}>
                                         {tool.status}
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-2">{tool.name}</h3>
-                                <p className="text-neutral-400 text-sm mb-6 line-clamp-2 min-h-[40px]">
+                                <h3 className="text-xl font-bold text-foreground mb-2">{tool.name}</h3>
+                                <p className="text-muted-foreground text-sm mb-6 line-clamp-2 min-h-[40px]">
                                     {tool.tagline}
                                 </p>
 
-                                <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                                    <div className="flex items-center gap-2 text-neutral-400 text-sm font-mono">
+                                <div className="flex items-center justify-between pt-6 border-t border-border">
+                                    <div className="flex items-center gap-2 text-muted-foreground text-sm font-mono">
                                         <Eye className="w-4 h-4" />
                                         {tool.views || 0}
                                     </div>
