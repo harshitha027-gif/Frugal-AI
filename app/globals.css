@@ -68,36 +68,36 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
+        --background: 40 31% 94%;
+        --foreground: 30 13% 9%;
+        --card: 40 43% 99%;
+        --card-foreground: 30 13% 9%;
+        --popover: 40 43% 99%;
+        --popover-foreground: 30 13% 9%;
+        --primary: 113 40% 25%;
+        --primary-foreground: 40 31% 94%;
+        --secondary: 113 23% 92%;
+        --secondary-foreground: 30 13% 9%;
+        --muted: 113 23% 92%;
+        --muted-foreground: 27 6% 40%;
+        --accent: 113 23% 92%;
+        --accent-foreground: 113 40% 25%;
+        --destructive: 10 61% 49%;
+        --destructive-foreground: 40 43% 99%;
+        --border: 37 14% 82%;
+        --input: 37 14% 82%;
+        --ring: 113 40% 25%;
         --radius: 0.5rem;
 
         /* Custom Colors for Redesign */
-        --primary-brand: 165 95% 50%;
-        --primary-brand-dark: 165 95% 39%;
-        --accent-orange: 24 95% 53%;
-        --accent-orange-hover: 24 95% 48%;
-        --surface-dark: 0 0% 98%;
-        --surface-border: 240 5.9% 90%;
-        --text-main: 240 10% 3.9%;
-        --text-muted: 240 3.8% 46.1%;
+        --primary-brand: 113 40% 25%;
+        --primary-brand-dark: 114 38% 20%;
+        --accent-orange: 10 61% 49%;
+        --accent-orange-hover: 10 61% 44%;
+        --surface-dark: 40 43% 99%;
+        --surface-border: 37 14% 82%;
+        --text-main: 30 13% 9%;
+        --text-muted: 27 6% 40%;
     }
 
     .dark {
